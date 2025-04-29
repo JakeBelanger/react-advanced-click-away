@@ -4,7 +4,7 @@ export interface LayerState {
   /**
    * Layer to be inherited by descendant ClickAwayListeners. Parent document if `null`.
    */
-  ownLayer: React.RefObject<HTMLElement>;
+  ownLayer: React.RefObject<HTMLElement | null>;
   /**
    * True if click away listeners on this layer are disabled
    */

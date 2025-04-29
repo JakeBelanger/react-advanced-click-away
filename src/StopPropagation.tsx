@@ -20,7 +20,7 @@ export interface Props {
   /**
    * A single element that accepts event handlers
    */
-  children?: ReactElement;
+  children?: ReactElement<any>;
   /**
    * Stop mouse, touch, drag and keyboard events
    */

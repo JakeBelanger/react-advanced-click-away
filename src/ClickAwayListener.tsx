@@ -73,7 +73,7 @@ export interface Props {
   /**
    * This must be a ref-accepting child.
    */
-  children: ReactElement;
+  children: ReactElement<any>;
   /**
    * Clickaway event to listen to.
    * @default 'mousedown'
@@ -121,7 +121,7 @@ const ClickAwayListener: React.FC<Props> = ({
   const activatedRef = useRef(false);
   const didHandleSyntheticEvent = useRef(false);
   const shouldAttemptClickaway = useRef(false);
-  const lastNativeEvent = useRef<MouseEvent | TouchEvent>();
+  const lastNativeEvent = useRef<MouseEvent | TouchEvent>(null);
   const mouseEventHandler = mouseEvent ? mouseEventMap[mouseEvent] : mouseEvent;
   const touchEventHandler = touchEvent ? touchEventMap[touchEvent] : touchEvent;
   const label = child?.props?.[debugLabelProp]; // for debugging

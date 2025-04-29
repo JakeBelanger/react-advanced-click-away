@@ -63,7 +63,12 @@ const ClickAwayLayer = forwardRef<HTMLDivElement, Props>(
       <LayerContext.Provider value={updatedContext}>
         {root || !children
           ? children
-          : cloneElement(children, { ref: combinedRef })}
+          : cloneElement(
+              children as ReactElement<{
+                ref: React.Ref<HTMLElement>;
+              }>,
+              { ref: combinedRef }
+            )}
       </LayerContext.Provider>
     );
   }

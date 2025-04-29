@@ -2,8 +2,8 @@ import { render } from "@testing-library/react";
 import React, { forwardRef, useRef } from "react";
 import useForkRef from "../../src/utils/useForkRef";
 
-let refA: React.RefObject<HTMLDivElement> | undefined;
-let refB: React.RefObject<HTMLDivElement> | undefined;
+let refA: React.RefObject<HTMLDivElement | null> | undefined;
+let refB: React.RefObject<HTMLDivElement | null> | undefined;
 
 const Child = forwardRef((props, parentRef) => {
   const ownRef = useRef<HTMLDivElement | null>(null);
